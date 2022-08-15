@@ -55,39 +55,57 @@ function navHighlighter() {
 
 // ====== CHANGE THEME  (DARK(current), LIGHT, COLOR(red))
 
-const switchElement = document.querySelector(".switch");
+window.addEventListener("load", () => {
+  const switchElement = document.querySelector(".switch");
 
-switchElement.addEventListener("click", () => {
-  document.body.classList.toggle("light");
+  if (localStorage.getItem("theme") === "light") {
+    localStorage.setItem("theme", "light");
+    document.body.classList.add("light");
+  }
+
+  switchElement.addEventListener("click", () => {
+    document.body.classList.toggle("light");
+    if (document.body.classList.contains("light")) {
+      localStorage.setItem("theme", "light");
+    } else {
+      localStorage.removeItem("theme");
+    }
+  });
 });
 
-// ====== SEND EMAIL THROUGH CONACT FORM
+// ====== CLEAR CONTACT FORM AFTER CLICKING SUBMIT BUTTON
 
-// Email.send({
+// const form = document.querySelector("form");
+// const submitButton = document.querySelector("#submit-btn");
+// const formInput = document.querySelector(".form-input");
+// const nameInput = document.querySelector(".name-input");
 
-//   Host : "smtp.elasticemail.com",
-//   Username : "leahpavone@gmail.com",
-//   Password : "41C61BEA9BBABF467D92550575161EC5298E",
-//   To : 'them@website.com',
-//   From : "you@isp.com",
-//   Subject : "This is the subject",
-//   Body : "And this is the body"
-// }).then(
-// message => alert(message)
-// );
+// const name = document.getElementById("name").value;
+// const email = document.getElementById("email").value;
+// const message = document.getElementById("message").value;
 
 // function sendEmail() {
 //   Email.send({
-//       Host : "ssmtp.elasticemail.com",
-//       Username : "leahpavone@gmail.com",
-//       Password : "41C61BEA9BBABF467D92550575161EC5298E",
-//       To : 'leahpavone@gmail.com',
-//       From : "sender@example.com",
-//       Subject : "Test email",
-//       Body : "<html><h2>Header</h2><strong>Bold text</strong><br></br><em>Italic</em></html>"
-//   }).then(
-//     message => alert(message)
-//   );
-//   }
+//     SecureToken: "a30267e6-00ae-451a-ad23-319d2482ffc6",
 
-// secureToken: '',
+//     To: "sleeepycodes@gmail.com",
+//     From: "leahpavone@gmail.com",
+//     Subject: "name email",
+//     Body: "message"
+//   }).then((message) => alert("yes"));
+//   console.log("hi");
+//   // nameInput.innerHTML = "";
+// }
+// // clearForm(form);
+
+// // function sendEmail() {
+// // }
+
+// submitButton.addEventListener("click", (e) => {
+//   // alert("ok");
+//   // e.sendEmail();
+//   // e.preventDefault();
+//   // name.value = "";
+//   // email.value = "";
+//   // message.value = "";
+// });

@@ -139,35 +139,77 @@
         <div class="page-heading" id="contact">Contact</div>
 
         <div class="contact-form-ctr">
-          <form class="contact-form" onsubmit="return false">
+          <form
+            class="contact-form"
+            method="POST"
+            action="https://formsubmit.co/0521ea1ab63bb61a25b2608dfe65c01a"
+            enctype="multipart/form-data"
+          >
+            <!-- onsubmit="sendEmail(); return false" -->
+            <!-- <form class="contact-form" method="POST"> -->
+            <!-- <form
+            class="contact-form"
+            onsubmit="sendEmail(); reset(); return false;"
+          > -->
             <div class="top-form-group">
               <div class="form-input-ctr">
+                <!-- <input type="hidden" name="_next" value="index.html" /> -->
+                <input
+                  type="hidden"
+                  name="_next"
+                  value="http://192.168.1.139:5502/#"
+                />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="basic" />
                 <label class="form-label" for="name">Name:</label>
-                <input class="form-input name-input" id="name" type="text" />
+                <input
+                  class="form-input name-input"
+                  name="Name"
+                  id="name"
+                  type="text"
+                  required
+                />
               </div>
               <div class="form-input-ctr">
                 <label class="form-label" for="email">Email:</label>
-                <input class="form-input email-input" id="email" type="email" />
+                <input
+                  class="form-input email-input"
+                  name="Email"
+                  id="email"
+                  type="email"
+                  required
+                />
               </div>
             </div>
             <div class="form-input-ctr">
               <label class="form-label" for="message">Message:</label>
               <textarea
                 class="form-input message-input"
-                name="message"
+                name="Message"
                 id="message"
                 cols="30"
                 rows="10"
+                required
               ></textarea>
             </div>
+
             <div class="submit-message-btn-ctr">
-              <button class="submit-message-btn">Send</button>
+              <button type="submit" class="submit-btn" id="submit-btn">
+                Submit
+              </button>
+
+              <!-- <input
+                type="button"
+                value="Send Email"
+                onclick="sendEmail()"
+                id="submit-button"
+              /> -->
             </div>
           </form>
         </div>
       </section>
     </main>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
     <script type="text/javascript" src="script.js"></script>
   </body>
 </html>
