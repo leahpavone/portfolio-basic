@@ -43,6 +43,33 @@ html {
 
 */
 
+/* LOADER */
+
+.loader {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #8f3734;
+  z-index: 9999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 1.5s ease;
+}
+
+.disappear {
+  animation: vanish 0.2s forwards;
+}
+
+@keyframes vanish {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 body {
   font-family: "DM Sans";
   color: #fff6f6;
@@ -113,6 +140,15 @@ input[data-autocompleted] {
 }
 
 input::selection {
+  background-color: rgb(255, 246, 246, 0.5);
+}
+
+textarea {
+  font-size: 18px;
+  font-family: "DM Sans";
+}
+
+textarea::selection {
   background-color: #fff6f6;
 }
 
@@ -359,7 +395,7 @@ input::selection {
 }
 
 .leah-img {
-  background-image: url(img/leah.png);
+  background-image: url(img/leah-small.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -405,8 +441,8 @@ input::selection {
 }
 
 .light .contact-form {
-  /* background-color: rgba(0, 0, 0, 0.15); */
-  /* background-color: #343434; */
+  background-color: rgba(0, 0, 0, 0.15);
+  /* background-color: #8f3734; */
 }
 
 .top-form-group {
@@ -424,9 +460,9 @@ input::selection {
   text-transform: uppercase;
 }
 
-/* .light .form-label {
+.light .form-label {
   color: #111;
-} */
+}
 
 .form-input-ctr {
   display: flex;
@@ -445,7 +481,12 @@ input::selection {
   height: 100%;
   width: 100%;
   font-size: 16px;
+  transition: all 0.3s;
 }
+
+/* .light .form-input {
+  background-color: #fff6f6;
+} */
 
 .form-input::placeholder {
   color: rgb(17, 17, 17, 0.5);
@@ -483,8 +524,9 @@ input::selection {
 }
 
 .submit-btn {
-  /* background-color: #111; */
+  /* background-color: #fff6f6; */
   /* border: none; */
+  /* border: 2px solid #fff6f6; */
   border: 2px solid #8f3734;
   color: #8f3734;
   /* padding: 20px 30px; */
@@ -496,10 +538,23 @@ input::selection {
   font-weight: 600;
   width: 100%;
   background-color: transparent;
+  transition: all 0.3s;
 }
+
+/* .light .submit-btn {
+  border: 2px solid #111;
+  color: #111;
+}
+.light .submit-btn:hover {
+  border: 2px solid #fff6f6;
+  color: #fff6f6;
+} */
 
 .submit-btn:hover {
   cursor: pointer;
+  border: 2px solid #111;
+  color: #111;
+  transform: scale(101%);
 }
 
 .attachment {

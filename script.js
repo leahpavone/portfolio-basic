@@ -1,20 +1,50 @@
+// ======  LOADER
+
+// const loaderWrapper = document.querySelector(".loader-wrapper");
+const loader = document.querySelector(".loader");
+console.log(loader);
+
+// window.addEventListener("load", vanish);
+// function vanish() {
+//   loader.classList.add("disappear");
+// }
+
+window.addEventListener("load", () => {
+  setTimeout(function () {
+    loader.classList.add("disappear");
+  }, 3000);
+});
+
+// if (body.classList.contains("light")) {
+//   loader.style.backgroundColor = "#fff6f6";
+//   setTimeout(function () {
+//     loader.classList.add("disappear");
+//   }, 2000);
+// } else {
+//   loader.style.backgroundColor = "#111";
+//   setTimeout(function () {
+//     loader.classList.add("disappear");
+//   }, 2000);
+// }
+
+// window.addEventListener("load", () => {
+//   if (body.classList.contains("light")) {
+//     loader.style.backgroundColor = #fff6f6;
+//     setTimeout(function () {
+//       loader.classList.add("disappear");
+//     }, 2000);
+//   } else {
+//     loader.style.backgroundColor = #111;
+//   setTimeout(function () {
+//     loader.classList.add("disappear");
+//   }, 2000);
+// }
+// });
+
 // ====== SCROLL BY NAV LINK
 
-// Get all sections that have an ID defined
 const sections = document.querySelectorAll("section[id]");
-// const section = document.querySelectorAll("section");
 
-const about = document.querySelector("#about");
-const projects = document.querySelector("#projects");
-const contact = document.querySelector("#contact");
-
-const navLinks = document.querySelectorAll(".nav-links");
-const navLink = document.querySelectorAll(".nav-link");
-
-const downArrow = document.querySelector(".down-arrow");
-const upArrow = document.querySelector(".up-arrow");
-
-// Add an event listener listening for scroll
 window.addEventListener("scroll", navHighlighter);
 
 function navHighlighter() {
@@ -32,7 +62,7 @@ function navHighlighter() {
 
     /*
     - If our current scroll position enters the space where current section on screen is, add .active class to corresponding navigation link, else remove it
-    - To know which link needs an active class, we use sectionId variable we are getting while looping through sections as an selector
+    - To know which link needs an active class, we use sectionId variable we are getting while looping through sections as a selector
     */
 
     for (let i = 0; i < sections.length; i++) {
@@ -51,11 +81,10 @@ function navHighlighter() {
   });
 }
 
-// ====== SCROLL BY ARROW ICON
+// ====== CHANGE THEME & STORE IN LOCAL STORAGE
 
-// ====== CHANGE THEME  (DARK(current), LIGHT, COLOR(red))
-
-window.addEventListener("load", () => {
+window.addEventListener("DOMContentLoaded", () => {
+  // loaderWrapper.style.display = "none";
   const switchElement = document.querySelector(".switch");
 
   if (localStorage.getItem("theme") === "light") {
@@ -67,45 +96,21 @@ window.addEventListener("load", () => {
     document.body.classList.toggle("light");
     if (document.body.classList.contains("light")) {
       localStorage.setItem("theme", "light");
+      // loader.style.backgroundColor = "#fff6f6";
     } else {
       localStorage.removeItem("theme");
+      // loader.style.backgroundColor = "#111";
     }
   });
 });
 
-// ====== CLEAR CONTACT FORM AFTER CLICKING SUBMIT BUTTON
+// ====== ALERT UPON CLICKING SUBMIT CONTACT FORM BUTTON
 
-// const form = document.querySelector("form");
-// const submitButton = document.querySelector("#submit-btn");
-// const formInput = document.querySelector(".form-input");
-// const nameInput = document.querySelector(".name-input");
+// const submitButton = document.querySelector("#submitButton");
+// let message;
 
-// const name = document.getElementById("name").value;
-// const email = document.getElementById("email").value;
-// const message = document.getElementById("message").value;
-
-// function sendEmail() {
-//   Email.send({
-//     SecureToken: "a30267e6-00ae-451a-ad23-319d2482ffc6",
-
-//     To: "sleeepycodes@gmail.com",
-//     From: "leahpavone@gmail.com",
-//     Subject: "name email",
-//     Body: "message"
-//   }).then((message) => alert("yes"));
-//   console.log("hi");
-//   // nameInput.innerHTML = "";
-// }
-// // clearForm(form);
-
-// // function sendEmail() {
-// // }
-
-// submitButton.addEventListener("click", (e) => {
-//   // alert("ok");
-//   // e.sendEmail();
-//   // e.preventDefault();
-//   // name.value = "";
-//   // email.value = "";
-//   // message.value = "";
+// submitButton.addEventListener("click", () => {
+//   message =
+//   alert((message) => "GOOD JOB");
 // });
+// console.log(message);
